@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  jupyter:
+    build: .
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_TOKEN=mlops
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      - ../:/workspace
+    restart: unless-stopped
+
+
